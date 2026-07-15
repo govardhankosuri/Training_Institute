@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Home page</title>
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body{
+            background: #f5f7fb;
+            color: #333;
+        }
+    header{
+                    background:rgba(15, 91, 179, 0.959);
+                    color:#fff;
+                    position:sticky;
+                    top:0;
+                    z-index:999;
+                    
+                }
+
+                .navbar{
+                    display:flex;
+                    justify-content:space-between;
+                    align-items:center;
+                    padding:15px 0;
+                    width:90%;
+                    max-width:1200px;
+                    margin:auto;
+                }
+
+                .logo{
+                    display: flex;
+                    font-size:22px;
+                    font-weight:bold;
+                    align-items: center;
+                }
+
+                .logo img{
+                    width:60px;
+                    height:60px;
+                }
+
+                nav ul{
+                    display:flex;
+                    list-style:none;
+                }
+
+                nav ul li{
+                    margin-left:25px;
+                }
+
+                nav ul li a{
+                    color:white;
+                    text-decoration:none;
+                }
+                .btn4{
+background:white;
+color:#0d47a1;
+padding:10px 20px;
+border-radius: 30px;
+
+}
+.btn5{
+background:white;
+color:#0d47a1;
+padding:10px 20px;
+border-radius: 30px;
+}
+/* hamburger button */
+.hamburger{
+  display:none;
+  flex-direction:column;
+  justify-content:space-between;
+  width:30px;
+  height:22px;
+  background:transparent;
+  border:none;
+  cursor:pointer;
+  margin-left:10px;
+}
+.hamburger span{
+  display:block;
+  height:3px;
+  background:#fff;
+  border-radius:2px;
+
+}
+
+/* mobile nav behavior */
+@media (max-width: 768px) {
+  nav#navMenu{
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:75%;
+    height:100%;
+    background:rgba(15,91,179,0.98);
+    display:flex;
+    align-items:flex-start;
+    padding-top:80px;
+    transition:right .28s ease;
+    z-index:1000;
+
+  }
+  nav#navMenu.open{ right:0; }
+  nav#navMenu ul{ flex-direction:column; gap:18px; padding-left:24px; }
+  nav#navMenu ul li a{ color:#080808; font-size:18px; }
+  .hamburger{ display:flex; }
+  /* optional: dim page when open */
+  .menu-backdrop{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.4);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .28s;
+    z-index:900;
+  }
+  .menu-backdrop.visible{ opacity:1; pointer-events:auto; }
+}
+                .hero{
+height:90vh;
+background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url("https://images.unsplash.com/photo-1643199121319-b3b5695e4acb") center/cover;
+display:flex;
+align-items:center;
+padding-left:10%;
+color:white;
+}
+
+.hero h1{
+font-size:55px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:20px;
+max-width:600px;
+margin-bottom:30px;
+line-height:1.6;
+}
+
+.btn,.btn2, .btn3 {
+padding:14px 30px;
+text-decoration:none;
+border-radius:30px;
+margin-right:15px;
+font-weight:bold;
+}
+
+.btn{
+background:#ffb300;
+color:#000;
+}
+
+.btn2{
+background:white;
+color:#0d47a1;
+}
+
+/* About */
+
+.about{
+padding:80px 10%;
+text-align:center;
+}
+
+.about h2{
+font-size:38px;
+color:#0d47a1;
+margin-bottom:20px;
+}
+
+.about p{
+font-size:18px;
+line-height:1.8;
+margin-bottom: 20px;
+}
+.btn3{
+    background:#0d47a1;
+color:white;
+}
+
+
+/* Courses */
+
+.courses{
+padding:60px 10%;
+background:white;
+}
+
+.courses h2{
+text-align:center;
+margin-bottom:50px;
+color:#0d47a1;
+}
+
+.course-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:#f8f9fa;
+padding:30px;
+text-align:center;
+border-radius:10px;
+transition:.4s;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card i{
+font-size:45px;
+color:#0d47a1;
+margin-bottom:20px;
+}
+
+/* Features */
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+padding:70px 10%;
+background:#e3f2fd;
+text-align:center;
+}
+
+/* Statistics */
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+padding:60px 10%;
+background:#0d47a1;
+color:white;
+text-align:center;
+}
+
+.stats h2{
+font-size:42px;
+margin-bottom:10px;
+}
+
+
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:20px;
+}
+@media (max-width: 1024px) {
+            .hero {
+                padding-left: 6%;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .about, .courses, .features, .stats {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+        }
+@media (max-width: 600px) {
+            .hero {
+                padding: 50px 5% 70px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .about h2, .courses h2 {
+                font-size: 32px;
+            }
+
+            .about p, .hero p {
+                font-size: 16px;
+            }
+
+            .card {
+                padding: 24px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+                padding: 50px 5%;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+                padding: 40px 5%;
+            }
+        }
+
+                </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+               
+                <div class="logo">
+                     <img src="logot.png" alt="logo">
+
+                     Ascendora Institute
+                </div>
+                <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+                
+                <nav id="navMenu">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="courselist.html">Courses</a></li>
+                        <li><a href="enrollment.html">Enrollment Forms</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="login.html" class="btn4">Login</a></li>
+                        <li><a href="signup.html" class="btn5">Sign Up</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+
+    </header>
+<section class="hero">
+
+<div class="hero-text">
+
+<h1>Learn Today, Lead Tomorrow</h1>
+
+<p>
+Upgrade your skills with industry-oriented
+training programs and placement assistance.
+</p>
+
+<a href="courselist.html" class="btn">Explore Courses</a>
+
+<a href="enrollment.html" class="btn2">Enroll Now</a>
+
+</div>
+
+</section>
+
+
+<!-- About -->
+
+<section class="about">
+
+<h2>About Our Institute</h2>
+
+<p>
+
+Ascendora Training Institute provides
+professional software, web development,
+data science, cloud computing and
+automation testing courses with
+real-time projects and placement support.
+
+</p>
+ <a href="aboutus.html" class="btn3">For More Info</a>
+</section>
+
+
+<!-- Courses -->
+
+<section class="courses">
+
+<h2>Popular Courses</h2>
+
+<div class="course-container">
+
+<div class="card">
+
+<i class="fa-solid fa-code"></i>
+
+<h3>Full Stack Development</h3>
+
+<p>HTML, CSS, JavaScript, React, Node.js</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-laptop-code"></i>
+
+<h3>Python Programming</h3>
+
+<p>Python, Django & Projects</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-bug"></i>
+
+<h3>Software Testing</h3>
+
+<p>Manual Testing & Selenium Automation</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-cloud"></i>
+
+<h3>AWS Cloud</h3>
+
+<p>Cloud Computing & DevOps</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- Features -->
+
+<section class="features">
+
+<div>
+
+<h3>Experienced Trainers</h3>
+
+<p>Industry professionals with real-time experience.</p>
+
+</div>
+
+<div>
+
+<h3>100% Placement Assistance</h3>
+
+<p>Resume, interview preparation and job support.</p>
+
+</div>
+
+<div>
+
+<h3>Live Projects</h3>
+
+<p>Hands-on practical sessions with real applications.</p>
+
+</div>
+
+</section>
+
+
+<!-- Statistics -->
+
+<section class="stats">
+
+<div>
+
+<h2>5000+</h2>
+
+<p>Students Trained</p>
+
+</div>
+
+<div>
+
+<h2>120+</h2>
+
+<p>Hiring Partners</p>
+
+</div>
+
+<div>
+
+<h2>95%</h2>
+
+<p>Placement Rate</p>
+
+</div>
+
+<div>
+
+<h2>12+</h2>
+
+<p>Years Experience</p>
+
+</div>
+
+</section>
+
+
+<!-- Footer -->
+
+<footer>
+
+<p>
+
+© 2026 Ascendora Training Institute.
+All Rights Reserved.
+
+</p>
+
+</footer>
+<script>
+const btn = document.querySelector('.hamburger');
+const nav = document.getElementById('navMenu');
+const backdrop = document.createElement('div');
+backdrop.className = 'menu-backdrop';
+document.body.appendChild(backdrop);
+
+function closeMenu(){
+  nav.classList.remove('open');
+  btn.setAttribute('aria-expanded','false');
+  backdrop.classList.remove('visible');
+}
+btn.addEventListener('click', ()=>{
+  const opened = nav.classList.toggle('open');
+  btn.setAttribute('aria-expanded', opened);
+  backdrop.classList.toggle('visible', opened);
+});
+backdrop.addEventListener('click', closeMenu);
+nav.querySelectorAll('a').forEach(a=> a.addEventListener('click', closeMenu));
+</script>
+
+</body>
+</html>
