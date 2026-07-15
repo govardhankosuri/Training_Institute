@@ -1,0 +1,519 @@
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap');
+
+/* --- Root Variable Declarations --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #0ea5e9;    /* Electric Cyan/Blue */
+    --dark-bg: #0f172a;          /* Deep Slate / Midnight */
+    --card-bg: #ffffff;
+    --body-bg: #f8fafc;          /* High-contrast off-white */
+    --text-main: #334155;        /* Neutral gray text */
+    --text-heading: #1e293b;
+    --border-color: #e2e8f0;
+}
+
+body {
+    background-color: var(--body-bg);
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+header{
+                    background:rgba(15, 91, 179, 0.959);
+                    color:#fff;
+                    position:sticky;
+                    top:0;
+                    z-index:999;
+                    
+                }
+
+                .navbar{
+                    display:flex;
+                    justify-content:space-between;
+                    align-items:center;
+                    padding:15px 0;
+                    width:90%;
+                    max-width:1200px;
+                    margin:auto;
+                    position:relative;
+                }
+
+                .logo{
+                    display: flex;
+                    font-size:22px;
+                    font-weight:bold;
+                    align-items: center;
+                }
+
+                .logo img{
+                    width:60px;
+                    height:60px;
+                }
+
+                nav ul{
+                    display:flex;
+                    list-style:none;
+                }
+
+                nav ul li{
+                    margin-left:25px;
+                }
+
+                nav ul li a{
+                    color:white;
+                    text-decoration:none;
+                }
+                .btn4{
+background:white;
+color:#010916;
+padding:10px 20px;
+border-radius: 30px;
+
+}
+.btn5{
+background:white;
+color:#010711;
+padding:10px 20px;
+border-radius: 30px;
+}
+/* hamburger button */
+.hamburger{
+  display:none;
+  align-items:center;
+  justify-content:center;
+  width:42px;
+  height:42px;
+  background:rgba(255,255,255,0.15);
+  border:1px solid rgba(255,255,255,0.25);
+  border-radius:8px;
+  cursor:pointer;
+  margin-left:10px;
+  padding:0;
+  appearance:none;
+  -webkit-appearance:none;
+  flex-shrink:0;
+  position:relative;
+  z-index:1100;
+  color:#110101;
+}
+.hamburger-icon{
+  font-size:24px;
+  line-height:1;
+  color:#fff;
+  font-weight:700;
+}
+
+/* mobile nav behavior */
+@media (max-width: 768px) {
+
+  nav#navMenu{
+    position:fixed;
+    top:0;
+    right:0;
+    left:auto;
+    transform:translateX(100%);
+    width:75%;
+    height:100%;
+    background:rgba(15,91,179,0.98);
+    display:flex;
+    align-items:flex-start;
+    padding-top:80px;
+    transition:transform .28s ease;
+    z-index:1000;
+  }
+  nav#navMenu.open{ right:0 !important; transform:translateX(0) !important; }
+  nav#navMenu ul{ flex-direction:column; gap:18px; padding-left:24px; }
+  nav#navMenu ul li a{ color:#0a0a0a; font-size:18px; }
+  .hamburger{ display:flex !important; position:absolute; right:0; top:50%; transform:translateY(-50%); z-index:1100; }
+  .menu-backdrop{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.4);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .28s;
+    z-index:900;
+  }
+  .menu-backdrop.visible{ opacity:1; pointer-events:auto; }
+}
+
+/* --- Navigation Header --- */
+.main-header {
+    background-color: var(--dark-bg);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.brand-logo img {
+    height: 38px;
+    width: auto;
+}
+
+.brand-logo .brand-name {
+    color: #ffffff;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.brand-logo .brand-name .highlight {
+    color: var(--primary-color);
+}
+
+
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-link {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary-color);
+}
+
+.btn-login {
+    border: 1.5px solid var(--primary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 7px 18px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: var(--primary-color);
+    color: var(--dark-bg);
+}
+
+/* --- Hero Showcase Block --- */
+.hero-section {
+    background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), 
+                url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200') no-repeat center center/cover;
+    color: #ffffff;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero-content max-width {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* --- Dynamic Courses Content Grid --- */
+.courses-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    flex: 1;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2rem;
+    color: var(--text-heading);
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #64748b;
+    font-size: 1rem;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+/* Course Card Architecture */
+.course-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.course-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-color: #cbd5e1;
+}
+
+/* Dynamic Level Badges */
+.card-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    z-index: 10;
+}
+.card-badge.beginner { background-color: #22c55e; }
+.card-badge.intermediate { background-color: #eab308; }
+.card-badge.advanced { background-color: #f97316; }
+.card-badge.expert { background-color: #ef4444; }
+
+.course-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.course-body {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-1: 1;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.course-body h3 {
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--text-heading);
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+}
+
+.course-desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+/* Program Metadata Matrix */
+.course-meta {
+    background-color: #f8fafc;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #f1f5f9;
+}
+
+.meta-item {
+    font-size: 0.88rem;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    color: var(--text-heading);
+}
+
+.meta-item:last-child {
+    margin-bottom: 0;
+}
+
+.meta-item i {
+    color: var(--primary-color);
+    width: 24px;
+    font-size: 0.95rem;
+}
+
+.meta-item span {
+    font-weight: 600;
+    color: #64748b;
+    margin-right: 5px;
+}
+
+.enroll-btn {
+    display: block;
+    text-align: center;
+    background-color: var(--dark-bg);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.enroll-btn:hover {
+    background-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+}
+
+/* --- Academy Footer Architecture --- */
+.main-footer {
+    background-color: var(--dark-bg);
+    color: #ffffff;
+    padding: 60px 20px 20px 20px;
+    margin-top: auto;
+    border-top: 3px solid var(--primary-color);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 50px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #1e293b;
+}
+
+.footer-info .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.footer-info .footer-logo img {
+    height: 32px;
+}
+
+.footer-info .footer-logo span {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.footer-info .footer-logo .highlight {
+    color: var(--primary-color);
+}
+
+.footer-info p {
+    color: #64748b;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    max-width: 400px;
+}
+
+.footer-nav h3 {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+.footer-nav ul {
+    list-style: none;
+}
+
+.footer-nav ul li {
+    margin-bottom: 12px;
+}
+
+.footer-nav ul li a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.footer-nav ul li a:hover {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 25px;
+    text-align: center;
+    color: #475569;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+/* --- Responsive Breakpoints --- */
+@media (max-width: 900px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .courses-grid {
+        grid-template-columns: 1fr;
+    }
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+}
