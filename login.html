@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ascendora Institute</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(203, 201, 212);
+            background-position: center;
+            background-size: cover;
+            min-height: 100vh;
+            font-family: Arial;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: rgba(15, 91, 179, 0.959);
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            font-size: 22px;
+            font-weight: bold;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 60px;
+            height: 60px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .btn4,
+        .btn5 {
+            background: white;
+            color: #0d47a1;
+            padding: 10px 20px;
+            border-radius: 30px;
+            display: inline-block;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 22px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            display: block;
+            height: 3px;
+            background: #fff;
+            border-radius: 2px;
+        }
+
+        .form-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 24px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .content {
+            background: rgba(15, 91, 179, 0.959);
+            box-sizing: border-box;
+            box-shadow: rgba(0, 0, 0, 0.8);
+            border: 3px solid rgb(51, 9, 13);
+            width: 400px;
+            min-height: 250px;
+            margin: 0;
+            padding: 20px;
+            transition: transform 0.3s;
+        }
+
+        .content:hover {
+            transform: translateY(-7px);
+        }
+
+        .content h2 {
+            font-size: 17px;
+            color: #3b050c;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+
+        .content p {
+            font-size: 17px;
+            color: #dbdf0a;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+
+        .content h3 {
+            font-size: 17px;
+            color: #f8f4f2;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            text-align: center;
+        }
+
+        .login {
+            width: 600px;
+            min-height: 300px;
+            background: #052979;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+            transition: transform 0.3s;
+            border: double 4px #f8f4f2;
+            backdrop-filter: blur(20px);
+            color: rgb(243, 243, 242);
+            margin: 0;
+            box-sizing: border-box;
+            padding: 30px 25px;
+            border-radius: 15px;
+            position: relative;
+        }
+
+        .login:hover {
+            transform: translateY(-7px);
+        }
+
+        h1 {
+            padding: 20px;
+            text-align: center;
+            font-size: 25px;
+            color: #ff7320;
+            font-weight: bold;
+        }
+
+        .h11 {
+            margin-top: -40px;
+            text-decoration: underline;
+            border: solid 2px #ff7320;
+            border-width: 3px;
+        }
+
+        .login h1 {
+            background-color: none;
+            border-radius: 6px;
+            margin: 0;
+            padding: 10px;
+        }
+
+        .login input {
+            width: 100%;
+            margin-bottom: 14px;
+            border: none;
+            border-bottom: 2px solid #fff;
+            background: transparent;
+            color: #fff;
+            height: 20px;
+        }
+
+        .btn {
+            font-size: 15px;
+            font-weight: 600;
+            color: #070000;
+            background-color: #ff7230;
+            padding-left: 13px;
+            height: 30px;
+            width: 70%;
+            margin-left: 85px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            animation: 0.4s ease-in-out;
+        }
+
+        .i1:hover,
+        .i2:hover,
+        .i3:hover,
+        .i4:hover {
+            color: #ff7320;
+            background: transparent;
+            border-bottom: 2px solid orange;
+            border-right: 2px solid orange;
+            border-left: 2px solid orange;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+
+        .bottom-text {
+            color: white;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        a {
+            color: orange;
+            padding-left: 5px;
+            text-decoration: none;
+        }
+
+        input.error {
+            border-bottom: 2px dotted red !important;
+        }
+
+        .menu a:hover {
+            color: #ff7230;
+        }
+
+        .menu-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.28s;
+            z-index: 900;
+        }
+
+        .menu-backdrop.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                width: 100%;
+                padding: 15px 16px;
+                position: relative;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            nav#navMenu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 75%;
+                height: 100%;
+                background: rgba(15, 91, 179, 0.98);
+                display: flex;
+                align-items: flex-start;
+                padding-top: 80px;
+                transition: right 0.28s ease;
+                z-index: 1000;
+            }
+
+            nav#navMenu.open {
+                right: 0;
+            }
+
+            nav#navMenu ul {
+                flex-direction: column;
+                gap: 18px;
+                padding-left: 14px;
+            }
+
+            nav#navMenu ul li {
+                margin-left: 0;
+            }
+
+            nav#navMenu ul li a {
+                color: #fff;
+                font-size: 18px;
+            }
+
+            .form-wrapper {
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 15px 30px;
+                margin: 20px auto 0;
+            }
+
+            .login,
+            .content {
+                width: 100%;
+                max-width: 100%;
+                margin: 0 0 20px 0;
+            }
+
+            .login {
+                min-height: auto;
+                padding: 20px;
+            }
+
+            .content {
+                min-height: auto;
+                padding: 20px;
+                text-align: center;
+            }
+
+            .content h2,
+            .content p,
+            .content h3 {
+                padding-left: 0;
+                text-align: center;
+                margin: 10px 0;
+            }
+
+            .btn {
+                width: 100%;
+                margin-left: 0;
+            }
+
+            .bottom-text {
+                margin: 20px 0 0;
+            }
+
+            .btn4{color:rgba(15, 91, 179, 0.98) ;}
+
+            .btn5{color:rgba(15, 91, 179, 0.98) ;}
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="logo.png" alt="logo">
+                Ascendora Institute
+            </div>
+
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav id="navMenu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="courselist.html">Courses</a></li>
+                    <li><a href="enrollment.html">Enrollment Forms</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html" class="btn4">Login</a></li>
+                    <li><a href="signup.html" class="btn5">Sign Up</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="form-wrapper">
+        <div class="login">
+            <h1 class="h11">LOGIN</h1>
+            <form class="frm" id="signupform" onsubmit="return validateForm()">
+             
+
+                <p>Email</p>
+                <input class="i2" type="email" id="email" name="" placeholder="Enter Your Email" required>
+
+                <p>Password</p>
+                <input class="i3" type="password" id="password" name="" placeholder="Create Password" required>
+
+               
+
+                <button type="submit" class="btn" value="LOGIN">LOGIN</button><br>
+
+                <div class="bottom-text">Don't have an account? <a href="signup.html">Sign Up</a></div>
+            </form>
+        </div>
+
+        <div class="content">
+            <h2>ASCENDORA INSTITUTE</h2>
+            <p>Welcomes Back!</p>
+            <h3>Let's go. Access your courses, training materials, and progress.</h3>
+            <br>
+            <p>Have a nice Day!</p>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+           
+            let email = document.getElementById("email");
+            let password = document.getElementById("password");
+         
+
+            let isValid = true;
+
+         
+            email.classList.remove("error");
+            password.classList.remove("error");
+         
+
+          
+
+            if (email.value.trim() === "") {
+                alert("Enter your email");
+                email.classList.add("error");
+                isValid = false;
+            }
+
+            if (password.value.trim() === "") {
+                alert("Enter your password");
+                password.classList.add("error");
+                isValid = false;
+            }
+
+
+            if (!isValid) {
+                return false;
+            }
+
+         
+
+            alert("Login Successful!");
+            return true;
+        }
+
+        const btn = document.querySelector('.hamburger');
+        const nav = document.getElementById('navMenu');
+        const backdrop = document.createElement('div');
+        backdrop.className = 'menu-backdrop';
+        document.body.appendChild(backdrop);
+
+        function closeMenu() {
+            if (nav) nav.classList.remove('open');
+            if (btn) btn.setAttribute('aria-expanded', 'false');
+            backdrop.classList.remove('visible');
+        }
+
+        if (btn) {
+            btn.addEventListener('click', () => {
+                const opened = nav.classList.toggle('open');
+                btn.setAttribute('aria-expanded', opened);
+                backdrop.classList.toggle('visible', opened);
+            });
+        }
+
+        backdrop.addEventListener('click', closeMenu);
+        if (nav) {
+            nav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+        }
+    </script>
+</body>
+</html>
