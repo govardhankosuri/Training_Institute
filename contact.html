@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>institutions</title>
+
+        <style>
+         *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body{
+            background: #f5f7fb;
+            color: #333;
+        }
+    header{
+                    background:rgba(15, 91, 179, 0.959);
+                    color:#fff;
+                    position:sticky;
+                    top:0;
+                    z-index:999;
+                    
+                }
+
+                .navbar{
+                    display:flex;
+                    justify-content:space-between;
+                    align-items:center;
+                    padding:15px 0;
+                    width:90%;
+                    max-width:1200px;
+                    margin:auto;
+                }
+
+                .logo{
+                    display: flex;
+                    font-size:22px;
+                    font-weight:bold;
+                    align-items: center;
+                }
+
+                .logo img{
+                    width:60px;
+                    height:60px;
+                    object-fit:contain;
+                }
+
+                nav{
+                    display:block;
+                }
+
+                nav ul{
+                    display:flex;
+                    align-items:center;
+                    gap:20px;
+                    list-style:none;
+                    margin:0;
+                    padding:0;
+                }
+
+                nav ul li{
+                    margin:0;
+                }
+
+                nav ul li a{
+                    color:white;
+                    text-decoration:none;
+                    font-weight:500;
+                    padding:6px 0;
+                    display:inline-block;
+                }
+                nav ul li a:hover,
+                nav ul li a:focus{
+                    color:#ffeb3b;
+                }
+ .btn4{
+background:white;
+color:#0d47a1;
+padding:10px 20px;
+border-radius: 30px;
+
+}
+.btn5{
+background:white;
+color:#0d47a1;
+padding:10px 20px;
+border-radius: 30px;
+}
+                .hamburger{
+                  display:none;
+                  flex-direction:column;
+                  justify-content:space-between;
+                  width:34px;
+                  height:26px;
+                  background:#fff;
+                  border:1px solid #000;
+                  border-radius:8px;
+                  padding:4px;
+                  cursor:pointer;
+                  margin-left:10px;
+                }
+                .hamburger span{
+                  display:block;
+                  width:100%;
+                  height:3px;
+                  background:#000;
+                  border-radius:2px;
+                }
+
+                /* mobile nav behavior */
+                @media (max-width: 1024px) {
+                    .navbar{
+                        flex-wrap:wrap;
+                        justify-content:space-between;
+                        gap:16px;
+                    }
+                    nav ul{
+                        flex-wrap:wrap;
+                        justify-content:center;
+                        gap:14px;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                  .hamburger{ display:flex; }
+                  nav#navMenu{
+                    position:fixed;
+                    top:0;
+                    right:-100%;
+                    width:100%;
+                    max-width:320px;
+                    height:100%;
+                    background:rgba(15,91,179,0.98);
+                    display:flex;
+                    align-items:flex-start;
+                    padding-top:90px;
+                    transition:right .28s ease, opacity .28s ease;
+                    z-index:1000;
+                    box-shadow:-10px 0 30px rgba(170, 12, 12, 0.2);
+                    visibility:hidden;
+                    opacity:0;
+                  }
+                  nav#navMenu.open{
+                    right:0;
+                    visibility:visible;
+                    opacity:1;
+                  }
+                  nav#navMenu ul{
+                    flex-direction:column;
+                    gap:18px;
+                    padding:0 24px;
+                    width:100%;
+                  }
+                  nav#navMenu ul li a{
+                    color:#fff;
+                    font-size:18px;
+                    padding:14px 0;
+                  }
+                  nav#navMenu ul li a.btn4,
+                  nav#navMenu ul li a.btn5{
+                    width:100%;
+                    text-align:center;
+                  }
+                  .menu-backdrop{
+                    position:fixed;
+                    inset:0;
+                    background:rgba(0,0,0,0.4);
+                    opacity:0;
+                    pointer-events:none;
+                    transition:opacity .28s;
+                    z-index:900;
+                  }
+                  .menu-backdrop.visible{ opacity:1; pointer-events:auto; }
+                  body.menu-open{overflow:hidden;}
+                }
+
+    
+                .container{
+                    width: 100%;
+                    max-width: 1100px;
+                    display: flex;
+                    flex-direction: row;
+                    gap: 30px;
+                    align-items: flex-start;
+                    margin-left: 110px;
+                    margin-top: 50px;
+                }
+                
+                form{
+                    width: 100%;
+                    max-width: 500px;
+                    background: white;
+                    padding: 24px;
+                    border-radius: 10px;
+                    border: 2px black;
+
+                
+                }
+               
+                input,select,textarea{
+                    width: 100%;
+                    padding: 19px;
+                    margin-bottom: 18px;
+                    font-size: 16px;
+                    border: 1px solid black;
+                    border-radius: 8px;
+                    box-sizing: border-box;
+                    font-family: inherit;
+                }
+                
+               
+                textarea{
+                    height: 120px;
+                    resize: vertical;
+                }
+                button{
+                    width: 100%;
+                    padding: 16px;
+                    background-color: pink;
+                
+                    border: none;
+                    border-radius: 8px;
+                    font-size: 18px;
+                    font-weight: bold;
+                    cursor: pointer;
+                }
+                button:hover{
+                    background-color: blueviolet;
+                }
+                .details{
+                flex: 1 ;
+                min-width: 320px;
+                padding: 90px;
+                font-family: Arial, Helvetica, sans-serif;
+                border: 1px blue;
+                border-radius: 10px;
+                background: white;     
+            }
+            .details h2{
+                
+                font-size: 10px;
+              
+                text-align: center;
+            }
+            .details-row{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                gap: 19px;
+                margin-bottom: 20px;
+            }
+            .details-row .item{
+                flex: 1 1 auto;
+                font-size: 15px;
+                
+            }
+            .details-row .item strong{
+                display: block;
+                margin-bottom: 4px ;
+            }
+           .details iframe{
+            width: 100%;
+            height: 250px;
+            border: 0;
+            border-radius: 5px;
+           }
+           /* ---------- Laptop ---------- */
+@media (max-width:1024px){
+
+    .navbar{
+        width:95%;
+        padding:15px 20px;
+        flex-wrap:wrap;
+        justify-content:space-between;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:14px;
+    }
+
+    nav ul li{
+        margin:0;
+    }
+
+    .hero-content h1{
+        font-size:48px;
+    }
+
+    .container{
+        flex-direction:column;
+        margin:30px auto 0;
+        width:calc(100% - 40px);
+        max-width:960px;
+    }
+
+    .details{
+        padding:24px;
+        margin-top:20px;
+    }
+
+    .form-container{
+        grid-template-columns:1fr;
+    }
+
+    .form-right{
+        position:static;
+    }
+
+    .upload-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width:600px){
+
+    .navbar{
+        flex-direction:column;
+        align-items:center;
+        gap:15px;
+        width:100%;
+        padding:15px 20px;
+    }
+
+    nav{
+        width:100%;
+    }
+
+    nav ul{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:12px;
+    }
+
+    nav ul li{
+        margin:0;
+    }
+
+    nav ul li a{
+        font-size:15px;
+    }
+
+    .container{
+        width:100%;
+        padding:0 16px;
+        margin-left:0;
+    }
+
+    .details{
+        padding:20px;
+    }
+
+    .input-grid{
+        grid-template-columns:1fr;
+    }
+
+    .upload-grid{
+        grid-template-columns:1fr;
+    }
+
+    .buttons{
+        flex-direction:column;
+    }
+
+    .footer-container{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .logo img{
+        width:55px;
+        height:55px;
+    }
+
+} 
+
+   </style>
+   </head>
+        <body>
+            <header>
+        <div class="navbar">
+               
+                <div class="logo">
+                     <img src="training.png" alt="logo">
+
+                     Ascendora Institute
+                </div>
+                <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+                
+                <nav id="navMenu">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="courselist.html">Courses</a></li>
+                        <li><a href="enrollment.html">Enrollment Forms</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="login.html" class="btn4">Login</a></li>
+                        <li><a href="signup.html" class="btn5">Sign Up</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+
+    </header>
+
+                <div class="container">
+                <form>
+                    <h1>Request a quote</h1>
+                    <input type="text" placeholder="Full name" required>
+                    <input type="text" placeholder="Email" required>
+                    <input type="tel" placeholder="mobile number" required>
+                    <select required>
+                        <option value="" disabled selected>selected courses</option>
+                        <option>Full Stack Web Development</option>
+                        <option>Full Stack Web Development</option>
+
+<option>Python Programming</option>
+
+<option>Java Full Stack</option>
+
+<option>Data Science</option>
+
+<option>Artificial Intelligence</option>
+
+<option>Machine Learning</option>
+
+<option>Cloud Computing</option>
+
+<option>Cyber Security</option>
+
+<option>UI / UX Design</option>
+
+<option>Digital Marketing</option>
+
+</select>
+                      
+                    <textarea placeholder="tell about your self" required></textarea>
+                    <button type="submit">submit Inquiry</button>
+                </form>
+                <div class="details">
+        <h1>Our Details</h1>
+        <div class="details-row">
+        <div class="item">
+        <strong>Address</strong> Hyderabad,India
+        </div>
+        <div class="item">
+        <strong>Phone</strong>+91 9876543210
+        </div>
+        <div class="item">
+        <strong>Email</strong> info@Ascendora Institute.com
+        </div>
+        </div>
+        <br>
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7610.572761126694!2d78.40022379601746!3d17.493837566445503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91625d9cd1ad%3A0x4455387ad24a675d!2s10000Coders!5e0!3m2!1sen!2sin!4v1783925266736!5m2!1sen!2sin" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            
+
+       </div>
+       
+    </div>
+    <div style="background: #7156bd; padding: 20px; text-align: center;">
+    <p style="color: rgb(38, 38, 39); font-style: italic;margin: 0;">@ 2026 Ascendora Institute. All rights Resered</p>
+</div>
+<script>
+const btn = document.querySelector('.hamburger');
+const nav = document.getElementById('navMenu');
+const body = document.body;
+const backdrop = document.createElement('div');
+backdrop.className = 'menu-backdrop';
+document.body.appendChild(backdrop);
+
+function setMenu(open) {
+  if (open) {
+    nav.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+    backdrop.classList.add('visible');
+    body.classList.add('menu-open');
+  } else {
+    nav.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+    backdrop.classList.remove('visible');
+    body.classList.remove('menu-open');
+  }
+}
+
+btn.addEventListener('click', () => {
+  setMenu(!nav.classList.contains('open'));
+});
+
+backdrop.addEventListener('click', () => setMenu(false));
+nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+</script>
+
+               
+        </body>
+</html>
