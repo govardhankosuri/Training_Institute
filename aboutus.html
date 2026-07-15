@@ -1,0 +1,526 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>about us</title>
+        <style>
+            * {
+                margin:0;
+                padding:0;
+                box-sizing: border-box;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+            }
+
+            body {
+                background-color: #f8f9fa;
+                color:#333;
+                line-height: 1.7;
+            }
+
+            header{
+                    background:rgba(15, 91, 179, 0.959);
+                    color:#fff;
+                    position:sticky;
+                    top:0;
+                    z-index:999;
+                    
+                }
+
+                .navbar{
+                    display:flex;
+                    justify-content:space-between;
+                    align-items:center;
+                    padding:15px 0;
+                    width:90%;
+                    max-width:1200px;
+                    margin:auto;
+                }
+
+                .logo{
+                    display: flex;
+                    font-size:22px;
+                    font-weight:bold;
+                    align-items: center;
+                }
+
+                .logo img{
+                    width:60px;
+                    height:60px;
+                }
+
+                
+
+                nav ul{
+                    display:flex;
+                    list-style:none;
+                }
+
+                nav ul li{
+                    margin-left:25px;
+                }
+
+                nav ul li a{
+                    color:black;
+                    text-decoration:none;
+                }
+                .btn4{
+               background:white;
+               color:#0d47a1;
+                padding:10px 20px;
+                border-radius: 30px;
+
+            }
+.btn5{
+background:white;
+color:#0d47a1;
+padding:10px 20px;
+border-radius: 30px;
+}
+
+.hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 22px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            display: block;
+            height: 3px;
+            background: #fff;
+            border-radius: 2px;
+            color:black;
+        }
+
+
+
+@media (max-width: 768px) {
+            .navbar {
+                width: 100%;
+                padding: 15px 16px;
+                position: relative;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            nav#navMenu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 75%;
+                height: 100%;
+                background: rgba(15, 91, 179, 0.98);
+                display: flex;
+                align-items: flex-start;
+                padding-top: 80px;
+                transition: right 0.28s ease;
+                z-index: 1000;
+            }
+
+            nav#navMenu.open {
+                right: 0;
+            }
+
+            nav#navMenu ul {
+                flex-direction: column;
+                gap: 18px;
+                padding-left: 14px;
+            }
+
+            nav#navMenu ul li {
+                margin-left: 0;
+            }
+
+            nav#navMenu ul li a {
+                color: black;
+                font-size: 18px;
+            }
+
+        }
+
+         .about-banner {
+                background: linear-gradient(rgba(77, 78, 78, 0.8),rgba(13,71,161,0.8));
+                background-repeat:  no-repeat;
+                background-size: cover;
+                color:black;
+                text-align: center;
+                padding: 80px 20px;
+                height:350px;
+            }
+
+            .about-banner h1{
+                font-size: 40px;
+                margin-bottom: 20px;
+            }
+
+            .about-banner p {
+                font-size: 18px;
+            }
+
+            .about-section {
+                max-width: 1100px;
+                margin: 60px auto;
+                padding: 0 20px;
+                display:flex;
+                gap: 40px;
+                flex-wrap: wrap;
+                align-items: center;
+            }
+
+            .about-text {
+                flex:1;
+                min-width:300px;
+            }
+
+            .about-text h2 {
+                font-size: 32px;
+                color:#0d47a1;
+                margin-bottom: 15px;
+            }
+
+            .about-text p {
+                margin-bottom: 15px;
+            }
+
+            .about-img {
+                flex:1;
+                min-width: 300px;
+            }
+
+            .about-img img {
+                width:100%;
+                border-radius: 10px;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            }
+
+            .stats {
+                background-color: #0d47a1;
+                color:white;
+                padding: 50px 20px;
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                gap:20px;
+                text-align: center;
+
+            }
+
+            .stat-box h3{
+                font-size: 40px;
+                color:#ffca28;
+                margin-bottom: 5px;
+
+            }
+
+            .why-us{
+                padding: 60px 20px;
+                text-align: center;
+
+            }
+
+            .why-us h2 {
+                font-size: 32px;
+                color:#0d47a1;
+                margin-bottom: 40px;
+            }
+
+            .features {
+                display:flex;
+                gap:25px;
+                flex-wrap: wrap;
+                justify-content: center;
+                max-width: 1100px;
+                margin: auto;
+            }
+
+            .feature {
+                background-color: white;
+                padding:25px;
+                border-radius: 10px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+                width:250px;
+                border-top: 4px solid #ff6f00;
+            }
+
+            .feature h4 {
+                color:#0d47a1;
+                margin-bottom: 8px;
+            }
+
+            .mission-vision {
+                background-color: white;
+                padding: 60px 20px;
+            }
+
+            .mv-container {
+                max-width: 1100px;
+                margin: auto;
+                display: flex;
+                gap: 30px;
+                flex-wrap: wrap;
+                text-align: center;
+            }
+
+            .mv-box {
+                flex:1;
+                min-width: 280;
+                background-color: #f1f8ff;
+                padding: 30px;
+                border-radius: 12px;
+                border-top: 4px solid #0d47a1;
+            }
+
+            .mv-box h3{
+                color:#0d47a1;
+                margin-bottom: 10px;
+            }
+
+            .courses {
+                padding: 60px 20px;
+                text-align: center;
+            }
+
+            .courses h2 {
+                font-size: 32px;
+                color:#0d47a1;
+                margin-bottom: 40px;
+            }
+
+            .course-grid {
+                max-width: 1100px;
+                margin:auto;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(220, 1fr));
+                gap:25px;
+            }
+
+            .course-card {
+                background-color: white;
+                padding:25px;
+                border-radius: 10px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            }
+
+            .course-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .cta{
+                background: linear-gradient(#0d47a1, #1976d2);
+                color:white;
+                padding: 70px 20px;
+                text-align: center;
+
+            }
+
+            .cta h2 {
+                font-size: 34px;
+                margin-bottom: 15px;
+            }
+
+            .btn {
+                background-color: #ffca28;
+                color:#0d47a1;
+                padding:14px 35px;
+                border-radius: 6px;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 16px;
+                display: inline-block;
+                margin-top: 20px;
+
+            }
+
+            .btn:hover{
+                background-color: #ffb300;
+            }
+
+            .footer{
+                background-color: #0d47a1;
+                color:white;
+                text-align: center;
+                padding:20px;
+                margin-top: 40px;
+            }
+            
+
+           </style>
+    </head>
+    <body>
+      <header>
+        <div class="navbar">
+                <div class="logo">
+                     <img src="institute logo.png" alt="logo">
+
+                     Ascendora Institute
+                </div>
+           
+                <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+                
+                <nav id="navMenu">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="courselist.html">Courses</a></li>
+                        <li><a href="enrollment.html">Enrollment Forms</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="login.html" class="btn4">Login</a></li>
+                        <li><a href="signup.html" class="btn5">Sign Up</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+
+    </header>
+
+    <section class="about-banner">
+        <h1>About Us</h1>
+        <p>Shaping future coders since 2018</p>
+    </section>
+
+   
+
+    <section class="about-section">
+        <div class="about-text">
+            <h2>Who We Are</h2>
+            <p>Ascendora Institute is a leading computer training institute dedicated to teaching the most in-demand programming languages and technologies. We bridge the gap between academic learning and industry requirement</p>
+
+            <p>With 5000+ students trained and 200+ companies hiring our graduates, we focus on practical, project-based learning instead of just theory.</p>
+
+            <p>Our expert trainers are working professionals from top IT companies who bring real-world experience to the classroom.</p>
+
+        </div>
+
+        <div class="about-img">
+            <img src="https://videocdn.cdnpk.net/videos/1b1f261d-231c-512a-a3c9-8ad4453a1ba6/horizontal/thumbnails/large.jpg?semt=ais_hybrid&item_id=3650845&w=740&q=80">
+
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stat-box"><h3>5000+</h3><p>Students Trained</p></div>
+
+        <div class="stat-box"><h3>200+</h3><p>Placement Partners</p></div>
+
+        <div class="stat-box"><h3>98%</h3><p>Placement Rate</p></div>
+
+        <div class="stat-box"><h3>50+</h3><p>courses Offered</p></div>
+    </section>
+
+    <section class="why-us">
+        <h2>Why Choose Ascendora?</h2>
+        <div class="features">
+        <div class="feature"><h4>100% Placement Support</h4><p>Resume, Mock Interviews & Job assistance</p></div>
+
+        <div class="feature"><h4>Industry Expert Trainers</h4><p>Learn from 5+ years Experienced Professionals</p></div>
+
+        <div class="feature"><h4>Live Projects</h4><p>Build 3+ real projects in every courses</p></div>
+
+        <div class="feature"><h4>Certified Courses</h4><p>Get Industry recognized Certificates.</p></div>
+        </div>
+    </section>
+
+    <section class="mission-vision">
+        <div class="mv-container">
+            <div class="mv-box">
+                <h3>Our Mission</h3>
+                <p>To make quality coding education affordable and accessible to everyone, and prepare students for high-paying tech jobs.</p>
+
+            </div>
+
+            <div class="mv-box">
+                <h3>Our Vision</h3>
+                <p>To become India's most trusted institute for producing job-ready software developers and tech professionals.</p>
+            </div>
+
+            <div class="mv-box">
+                <h3>Our Values</h3>
+                <p>Learning, Innovation, Integrity and placement Support. We don't just teach, we build careers</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="courses">
+        <h2>Popular Courses We Offer</h2>
+        <div class="course-grid">
+            <div class="course-card">
+                <h4>Python Programming</h4>
+                <p>Data Science, AI, & Automation</p>
+            </div>
+
+            <div class="course-card">
+                <h4>Web Development</h4>
+                <p>HTML, CSS, JavaScript, React</p>
+            </div>
+
+            <div class="course-card">
+                <h4>Java Full Stack</h4>
+                <p>Backend + Frontend + Spring Boot</p>
+            </div>
+
+            <div class="course-card">
+                <h4>C++ & DSA</h4>
+                <p>For placement and competitive coding</p>
+            </div>
+
+            <div class="course-card">
+                <h4>Mobile App Dev</h4>
+                <p>Flutter & Android Development</p>
+            </div>
+
+            <div class="course-card">
+                <h4>SQL & Data Analytics</h4>
+                <p>Database + Power BI + Excel</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Ready to Start Your Tech Career?</h2>
+        <p>Join 5000+ successful students and get placed in top companies.</p>
+        <a href="enrollment.html" class="btn">Enroll Now</a>
+    </section>
+
+    <div class="footer">
+        <p>&copy; 2026 ASCENDORA INSTITUTE. All Rights Reserved.</p>
+    </div>
+ <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', () => {
+                const isOpen = navMenu.classList.toggle('open');
+                hamburger.setAttribute('aria-expanded', isOpen);
+            });
+
+            navMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('open');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
+    </script>
+    </body>
+</html>
